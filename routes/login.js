@@ -11,7 +11,7 @@ router.post('/', async function(req, res, next) {
   console.log(`response: ${response}`);
   if(response === false) {
     console.log('Invalid credentials');    
-    next(new ApiError(400,'BROKEN'));
+    next(new ApiError(401,'BROKEN'));
   }else 
   {
   res.cookie('token', response);
